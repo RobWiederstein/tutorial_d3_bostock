@@ -1,0 +1,57 @@
+<!DOCTYPE>
+
+<head>
+        <!--  <script src="./d3.min.js"></script> -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+
+        <script>
+                /*declarative style*/
+                /*d3.select("body").style("background-color", "black");*/
+
+                /*random color paragraphs*/
+                /*d3.selectAll("p").style("color", function () {
+                        return "hsl(" + Math.random() * 360 + ",100%,50%)";
+                });*/
+
+                /*Font increases in size for each p element
+                d3.selectAll("p")
+                        .data([4, 8, 15, 16, 23, 42])
+                        .style("font-size", function (d) {
+                                return d + "px";
+                        }); */
+
+                /*// Update…
+                var p = d3.select("body")
+                        .selectAll("p")
+                        .data([4, 8, 15, 16, 23, 42])
+                        .text(function (d) {
+                                return d;
+                        });
+
+                // Enter…
+                p.enter().append("p")
+                        .text(function (d) {
+                                return d;
+                        });
+
+                // Exit…
+                p.exit().remove(); */
+
+                /*
+                //transitions
+                d3.select("body").transition()
+                        .style("background-color", "black");
+                        */
+                d3.selectAll("circle").transition()
+                        .duration(750)
+                        .delay(function (d, i) {
+                                return i * 10;
+                        })
+                        .attr("r", function (d) {
+                                return Math.sqrt(d * scale);
+                        });
+        </script>
+</body>
